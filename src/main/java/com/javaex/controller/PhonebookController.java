@@ -19,6 +19,5 @@ public class PhonebookController {
 	public List<PhonebookVo> list() {
 		
 		return ps.list();
-		
 	}
 }

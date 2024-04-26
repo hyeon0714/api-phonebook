@@ -11,4 +11,31 @@
 		company
 		from person
 	</select>
+	
+	<select id="listone" parameterType="int" resultType="com.javaex.vo.PhonebookVo">
+		select person_id personId,
+		name,
+		hp,
+		company
+		from person
+		where person_id = #{no}
+	</select>
+	
+	<insert id="insert" parameterType="com.javaex.vo.PhonebookVo">
+		insert into person
+		values(null ,#{name}, #{hp}, #{company})
+	</insert>
+	
+	<delete id="del" parameterType="int">
+		delete from person
+		where person_id = #{no}
+	</delete>
+	
+	<update id="modify" parameterType="com.javaex.vo.PhonebookVo">
+		update 	person
+		set		name = #{name},
+				hp = #{hp},
+		        company = #{company}
+		where	person_id = #{personId}
+	</update>
 </mapper>

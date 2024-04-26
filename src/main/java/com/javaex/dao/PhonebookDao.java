@@ -18,4 +18,22 @@ public class PhonebookDao {
 		
 		return sqlSession.selectList("phonebook.list");
 	}
+	
+	public PhonebookVo listOne(int no) {
+		
+		return sqlSession.selectOne("phonebook.listone", no);
+	}
+	
+	public int insert(PhonebookVo pv) {
+		
+		return sqlSession.insert("phonebook.insert", pv);
+	}
+	
+	public int del(int no) {
+		return sqlSession.delete("phonebook.del", no);
+	}
+	
+	public int modify(PhonebookVo pv) {
+		return sqlSession.update("phonebook.modify", pv);
+	}
 }
